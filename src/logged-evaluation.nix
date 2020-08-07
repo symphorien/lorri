@@ -13,6 +13,7 @@ let
     builtins = builtins // {
       readFile = file: builtins.trace "lorri read: '${toString file}'" (builtins.readFile file);
       readDir = path: builtins.trace "lorri read: '${toString path}'" (builtins.readDir path);
+      filterSource = fn: path: builtins.trace "lorri read: '${toString path}'" (builtins.filterSource fn path);
     };
   };
 
